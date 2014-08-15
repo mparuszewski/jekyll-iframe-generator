@@ -8,7 +8,6 @@
 
 module Jekyll
   module IFrameable
-
     def data
       current_layout = super['layout']
       super.merge('layout' => "#{current_layout}-iframe", 'type' => 'iframe', 'subdir' => '/iframe')
@@ -17,11 +16,6 @@ module Jekyll
     def template
       "/iframe/#{super}"
     end
-
-    def render(layouts, site_payload)
-      super(layouts, site_payload)
-    end
-
   end
 
   class IFrameGenerator < Generator
